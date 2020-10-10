@@ -6,7 +6,7 @@ while True:
     print("2. Subtract")
     print("3. Multiply")
     print("4. Divide")
-    
+
     try:
         choice = float(input("Enter Choice:"))
     except Exception as ex:

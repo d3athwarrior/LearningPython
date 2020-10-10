@@ -4,17 +4,23 @@
     will do when I learn more about scopes.
 '''
 abcd = "hello"
+
+
 def myFunction():
     abcd = 5
-    globals()['abcd'] = globals()['abcd'] + "#tell python that I am indeed using the global variable and then use it later on !?!?!!!??"
+    globals()['abcd'] = globals()['abcd'] + \
+        "#tell python that I am indeed using the global variable and then use it later on !?!?!!!??"
     print(globals()['abcd'])
     print(abcd)
     return
 
+
 myFunction()
 
+
 def myFunction2(stringToConcat: str):
-    print(abcd+ " " +stringToConcat)
+    print(abcd + " " + stringToConcat)
     return
+
 
 myFunction2("I am a string that was concatanated")
