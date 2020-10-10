@@ -1,0 +1,20 @@
+{
+    "python.pythonPath": "posenv/bin/python",
+    "telemetry.enableCrashReporter": false,
+    "git.autofetch": true,
+    "sqltools.connections": [
+        {
+            "mysqlOptions": {
+                "authProtocol": "default"
+            },
+            "previewLimit": 100,
+            "server": "localhost",
+            "port": 3306,
+            "askForPassword": true,
+            "driver": "MariaDB",
+            "name": "LocalMariaDB",
+            "database": "test",
+            "username": "anish"
+        }
+    ]
+}
