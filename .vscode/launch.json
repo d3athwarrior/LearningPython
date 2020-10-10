@@ -5,13 +5,6 @@
     "version": "0.2.0",
     "configurations": [
         {
-            "type": "java",
-            "name": "CodeLens (Launch) - Abcd",
-            "request": "launch",
-            "mainClass": "Abcd",
-            "projectName": "POSBackendPython_f818b97b"
-        },
-        {
             "name": "Python: Current File",
             "type": "python",
             "request": "launch",
