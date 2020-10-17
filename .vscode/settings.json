@@ -16,5 +16,6 @@
             "database": "test",
             "username": "anish"
         }
-    ]
+    ],
+    "cSpell.enabled": true
 }
