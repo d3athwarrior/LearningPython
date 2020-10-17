@@ -24,3 +24,20 @@ def myFunction2(stringToConcat: str):
 
 
 myFunction2("I am a string that was concatanated")
+
+
+# Scope of a variable is not defined by blocks unless they are in a function as seen above
+# In the example below, you will see that despite something being defined in the block it will
+# not be considered as block scope
+
+x = 15
+y = 45
+
+if (x < y):
+    z = "Hello, i was set in the if block"
+    print(x)
+else:
+    print(y)
+    print('I will reset the value for z')
+    z = "My value was reset" # This will not be executed since it is in the else block and hence will not reset the value of 'z'
+print(z)
