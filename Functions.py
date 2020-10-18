@@ -39,3 +39,8 @@ print(add(num2=55, num1= 5))
 help(add)
 
 test_passing_function_as_arguments(add, subtract) # We can pass functions to another function for execution
+
+# We can assign a function to another variable and then call it using that
+# https://medium.com/python-pandemonium/function-as-objects-in-python-d5215e6d1b0d
+renamed_add_function = add
+print(renamed_add_function(85, 10))
