@@ -26,7 +26,7 @@ class Vehicle:
     def number_of_wheels(self):
         return self.wheels
 
-    # If i prefix a function name with __ (double underscore) python does what is explained in the link below:
+    # If i prefix a function name with __ (double underscore) python performs name mangling, which is explained in the link below:
     # https://dbader.org/blog/meaning-of-underscores-in-python#:~:text=A%20double%20underscore%20prefix%20causes,the%20class%20is%20extended%20later.
     def __drive(self):
         return "The vehicle is being driven around until this program ends."
