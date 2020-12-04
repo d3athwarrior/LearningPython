@@ -17,5 +17,7 @@
             "username": "anish"
         }
     ],
-    "cSpell.enabled": true
+    "cSpell.enabled": true,
+    "workbench.editor.enablePreview": false,
+    "workbench.editor.enablePreviewFromQuickOpen": false
 }
