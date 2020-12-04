@@ -44,3 +44,30 @@ test_passing_function_as_arguments(add, subtract) # We can pass functions to ano
 # https://medium.com/python-pandemonium/function-as-objects-in-python-d5215e6d1b0d
 renamed_add_function = add
 print(renamed_add_function(85, 10))
+
+
+def main():
+    multiply(3,85)
+
+
+# Python script is read from top to bottom, so any function that needs to be called,
+# needs to be defined before the statement for it's call appears in the script.
+if __name__ == "__main__":
+    '''
+        This check is similar to how main function behaves in many of the other languages
+        But since python is a scripting language, it doesn't really have a main function or
+        a so called starting point of execution
+
+        If a file is not in a module or imported in a module, then the __name__ will always
+        return __main__ indicating that it is either the first file that was executed
+        or it was the only file that was executed
+    '''
+    main()
+    # All functions in python return a value. When no specific value is returned,
+    # The special None value is returned as seen below
+    print(main())
+
+
+    # In python, immutable objects like list are pass by reference when passed to a function
+    # Values like integer and string are immutable and hence, are passed by value
+    # ToDo: Write an example for the above case
