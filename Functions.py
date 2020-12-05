@@ -36,7 +36,7 @@ print(add(num2=45))
 print(add(num2=55, num1= 5))
 
 # Print the docstring for a function
-help(add)
+# help(add)
 
 test_passing_function_as_arguments(add, subtract) # We can pass functions to another function for execution
 
@@ -46,8 +46,28 @@ renamed_add_function = add
 print(renamed_add_function(85, 10))
 
 
+# In python, immutable objects like list are pass by reference when passed to a function
+# Values like integer and string are immutable and hence, are passed by value
+def passByValue(randomNumber):
+    randomNumber = 15
+    print(randomNumber)
+    return
+
+def passByReference(listOfNames):
+    listOfNames[0] = "Bunny"
+    print(f"The list of names in reference is {listOfNames}")
+    return
+
 def main():
-    multiply(3,85)
+    number = 11
+    print(f"The value of 'number' is {number}")
+    passByValue(number)
+    print(f"The value of 'number' has not changed and is {number}")
+    listOfNames = ["Tortoise", "Rabbit", "Horse"]
+    print(f"The list of names before passing around is {listOfNames}")
+    passByReference(listOfNames)
+    print(f"The list of names post passing around is {listOfNames}")
+    return
 
 
 # Python script is read from top to bottom, so any function that needs to be called,
@@ -65,9 +85,4 @@ if __name__ == "__main__":
     main()
     # All functions in python return a value. When no specific value is returned,
     # The special None value is returned as seen below
-    print(main())
-
-
-    # In python, immutable objects like list are pass by reference when passed to a function
-    # Values like integer and string are immutable and hence, are passed by value
-    # ToDo: Write an example for the above case
+    print(renamed_add_function())
