@@ -58,15 +58,55 @@ def passByReference(listOfNames):
     print(f"The list of names in reference is {listOfNames}")
     return
 
+# Variable length argument list. They are always pass by reference
+# Variable length arguments are in essence tuples.
+# Traditionally preferred to be called args rather than any other name.
+# This is for the sake of convention
+def multiArgFunc(*parameter_list):
+    print(type(parameter_list), parameter_list)
+    parameter_list[0][0] = 15
+
+    # If the parameter_list is passed as independent values, then in that case,
+    # the values in the tuple will not be changeable if those are primitives only
+    # if they are a mix then the ones that are mutable like list and dictionary
+    # will be updated if one tries to change it in all other cases it will throw error
+    # parameter_list[0] = 15
+    return
+
+# Here the notation ** indicates that the argument is a dictionary
+# Standards specify that if we want to use a dictionary as an argument,
+# then in that case we need to ideally name it as kwargs indicating that it
+# is a dictionary
+def key_word_args_func(**kwargs):
+    for k in kwargs:
+        print("The capital of {} is {}".format(k, kwargs[k]))
+    return
+
+
 def main():
     number = 11
     print(f"The value of 'number' is {number}")
     passByValue(number)
     print(f"The value of 'number' has not changed and is {number}")
+    
     listOfNames = ["Tortoise", "Rabbit", "Horse"]
     print(f"The list of names before passing around is {listOfNames}")
     passByReference(listOfNames)
     print(f"The list of names post passing around is {listOfNames}")
+
+    one = 1
+    two = 2
+    three = 3
+    simple_Array = [one, two, three]
+    multiArgFunc(simple_Array, 15)
+    # To pass the entire list as an argument, simply pass it using '*'
+    # multiArgFunc(*simple_Array)
+    # The above will lead to the value turning to be immutable
+    print(f"Value of simple_Array post call {simple_Array}")
+
+    # kwargs function
+    dic = dict(India = "Delhi", China = "Beijing", Britain = "London")
+    key_word_args_func(**dic)
     return
 
 
@@ -85,4 +125,4 @@ if __name__ == "__main__":
     main()
     # All functions in python return a value. When no specific value is returned,
     # The special None value is returned as seen below
-    print(renamed_add_function())
+    print(key_word_args_func())
