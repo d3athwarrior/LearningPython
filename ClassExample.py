@@ -9,8 +9,12 @@ class Vehicle:
     # Usually, when we don't want the user of the class to access the internal or class variable
     # the max we can do in python is to prefix an _ to the variable name to discourage the 
     # consumer of the class from using this variable example instead of wheels we call it _wheels
-    _wheels = 0
-    _type_of_vehicle = ''
+    # This declaration will usually mean that these objects lie with the class and not with 
+    # the object reference
+    # Generally, mutable data is never put at the class level. Only constants and immutable data
+    # is put at the class level
+    #_wheels = 0
+    #_type_of_vehicle = ''
 
     # There are two functions that together do the work of construction of an object
     # 1. __new__
@@ -19,6 +23,8 @@ class Vehicle:
     # the object is done in the init method so all the external class variable values that
     # need to be set in the instance should be parsed in the __init__ method itself
     def __init__(self, wheels = 2, type_of_vehicle = 'Motor Cycle'):
+        # Here the class has _wheels and on the reference as well we are assigning 
+        # value to _wheels.
         self._wheels = wheels
         self._type_of_vehicle = type_of_vehicle
 
@@ -47,6 +53,10 @@ def main():
         Try to create a main function like how it is in other languages just for the sake of convenience
     '''
     car = Vehicle(4, 'Car')
+    bike = Vehicle(2, "Bike")
+    print(car._wheels)
+    bike._wheels = 3
+    print(car._wheels)
     print(Vehicle.drive(car))
     print(car)
     print(car.drive())
