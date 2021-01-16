@@ -46,6 +46,11 @@ def main():
     # Below code will print the image as garbage values since the image is a binary data
     binary_mode_file = open('./FileHandling/random.jpg', mode='rb')
     for line in binary_mode_file:
+        """
+            As a good practice, always have a buffer when reading a binary file as one might not know what would be the
+            size of the file to be read
+            buffer = line.read(10240) 
+        """
         print(line.strip())
 
 if __name__ == "__main__":
