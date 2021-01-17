@@ -22,7 +22,13 @@ class Vehicle:
     # It only makes sense to have things in the __init__ block since the work of initializing
     # the object is done in the init method so all the external class variable values that
     # need to be set in the instance should be parsed in the __init__ method itself
-    def __init__(self, wheels = 2, type_of_vehicle = 'Motor Cycle'):
+    # In python usually something known as Duck Typing is used. But starting with python 3.5,
+    # one can to a certain extent in their classes and functions define the type of the
+    # object that is returned or is accepted as an argument to the object. This will result
+    # the linter to infer those hints and give a warning to the developer to be able to
+    # identify issues in the code at the time of writing itself instead of having issues with
+    # it at later stages of development
+    def __init__(self, wheels: int = 2, type_of_vehicle: str = 'Motor Cycle'):
         # Here the class has _wheels and on the reference as well we are assigning 
         # value to _wheels.
         self._wheels = wheels
