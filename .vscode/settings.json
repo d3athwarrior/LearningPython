@@ -19,5 +19,6 @@
     ],
     "cSpell.enabled": true,
     "workbench.editor.enablePreview": false,
-    "workbench.editor.enablePreviewFromQuickOpen": false
+    "workbench.editor.enablePreviewFromQuickOpen": false,
+    "python.linting.enabled": true
 }
